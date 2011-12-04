@@ -12,7 +12,23 @@
 (import '(java.io InputStream File))
 ;this is only used for java import
 ```
+##Importing and using contrib functions
 
+```clojure
+(use 'clojure.contrib.math)
+(println (round 1.49999999999999999999))
+(println (round 1.49999999999999999999M))
+;restricting the use
+(use '[clojure.contrib.math :only (round)])
+```
+
+##Better use of namespace
+
+```clojure
+(ns my.namespace
+    (:use clojure.core clojure.contrib.str-utils)
+    (:import (java.io File)))
+```
 #Resources
 
  * http://leandromoreira.com.br/2011/11/29/clojure-resources/
