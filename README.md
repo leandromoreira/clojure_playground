@@ -29,6 +29,35 @@
     (:use clojure.core clojure.contrib.str-utils)
     (:import (java.io File)))
 ```
+
+##Working with Java
+
+```clojure
+; creating a java object on Clojure
+(new java.util.Random)
+; what about put this into a clojure Var.
+(def rnd (new java.util.Random))
+; using the special form . to acess methods on classes or object.
+(println (. rnd nextInt))
+(println (. rnd nextInt 10))
+; Math it's already included because it's inside of java.lang
+(println (. Math PI))
+; importing the classes
+(import '(java.util Random Locale)
+        '(java.text MessageFormat))
+
+; =======================
+; Syntatic sugar for Java
+; =======================
+
+; you can instantiate a class using
+(Random.)
+; you can access a field using
+(System/currentTimeMillis)
+; you can chain calling
+(.. person getAddress getZipCode)
+
+```
 #Resources
 
  * http://leandromoreira.com.br/2011/11/29/clojure-resources/
