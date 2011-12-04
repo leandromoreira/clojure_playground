@@ -9,6 +9,8 @@
 ;this is how you enter or create a namespace
 (clojure.core/use 'clojure.core)
 ;this is how you use (require and refer) the namespace
+(import '(java.io InputStream File))
+;this is only used for java import
 ```
 
 #Resources
